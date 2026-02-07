@@ -2,67 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Pizza Hut | Order Pizza Online</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Pizza Hut</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-  <h1 class="logo">Pizza Hut</h1>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#menu">Menu</a>
-    <a href="#cart">Cart</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#order">Order Now</a>
-  </nav>
-</header>
+  <!-- HEADER -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Pizza Hut">
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Menu</a>
+      <a href="#">Cart</a>
+      <a href="#">Reviews</a>
+      <a class="order-btn" href="#">Order Now</a>
+    </nav>
+  </header>
 
-<section id="home" class="hero">
-  <h2>Hot & Fresh Pizza Delivered Fast 🍕</h2>
-  <p>Delicious pizzas made just for you</p>
-  <button onclick="scrollToMenu()">View Menu</button>
-</section>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hot & Fresh Pizza<br>Delivered Fast!</h1>
+      <button>Order Now</button>
+    </div>
 
-<section id="menu">
-  <h2>Menu</h2>
+    <!-- CIRCULAR CAROUSEL -->
+    <div class="carousel">
+      <img id="pizzaImage" src="images/pizza1.jpg" alt="Pizza">
+    </div>
+  </section>
 
-  <div class="menu-item">
-    <h3>Pepperoni Pizza</h3>
-    <p>₹299</p>
-    <button onclick="addToCart('Pepperoni Pizza',299)">Add</button>
-  </div>
-
-  <div class="menu-item">
-    <h3>Paneer Pizza</h3>
-    <p>₹259</p>
-    <button onclick="addToCart('Paneer Pizza',259)">Add</button>
-  </div>
-
-  <div class="menu-item">
-    <h3>Chicken Pizza</h3>
-    <p>₹319</p>
-    <button onclick="addToCart('Chicken Pizza',319)">Add</button>
-  </div>
-</section>
-
-<section id="cart">
-  <h2>Your Cart</h2>
-  <ul id="cartItems"></ul>
-  <h3>Total: ₹<span id="total">0</span></h3>
-</section>
-
-<section id="reviews">
-  <h2>Reviews ⭐</h2>
-  <p>⭐⭐⭐⭐⭐ Amazing taste and fast delivery</p>
-  <p>⭐⭐⭐⭐⭐ Best pizza ever</p>
-</section>
-
-<section id="order">
-  <h2>Order Now</h2>
-  <button onclick="placeOrder()">Place Order</button>
-</section>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
