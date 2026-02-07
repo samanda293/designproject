@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #fff;
+  background: #ffffff;
 }
 
 /* NAVBAR */
@@ -71,14 +71,39 @@ nav a {
   cursor: pointer;
 }
 
+/* WHEEL WRAPPER */
+.wheel-wrapper {
+  position: relative;
+  width: 480px;
+  height: 480px;
+}
+
+/* 45° ARC WITH IDLE SPIN */
+.wheel-arc {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  border: 8px solid transparent;
+  border-top: 8px solid #e63946;
+  border-right: 8px solid #e63946;
+  animation: slowSpin 18s linear infinite;
+}
+
 /* PIZZA CIRCLE */
 .pizza-circle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
   width: 420px;
   height: 420px;
   border-radius: 50%;
   overflow: hidden;
-  position: relative;
+  background: #fff;
   box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+  z-index: 2;
 }
 
 .pizza-circle img {
@@ -86,9 +111,16 @@ nav a {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.7s ease-in-out;
+  transition: transform 0.6s ease;
+  will-change: transform;
 }
 
+/* IDLE ROTATION */
+@keyframes slowSpin {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(405deg);
+  }
+}
