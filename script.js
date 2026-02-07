@@ -1,15 +1,20 @@
-const images = ["p1.jpg", "p2.jpg", "p3.jpg", "p4.jpg"];
-let index = 0;
+const pizzas = [
+  "p1.png",
+  "p2.png",
+  "p3.png",
+  "p4.png"
+];
 
+let index = 0;
 const pizzaImage = document.getElementById("pizzaImage");
 
 setInterval(() => {
-    pizzaImage.style.opacity = 0;
+  pizzaImage.style.opacity = 0;
 
-    setTimeout(() => {
-        index = (index + 1) % images.length;
-        pizzaImage.src = images[index];
-        pizzaImage.style.opacity = 1;
-    }, 500);
+  setTimeout(() => {
+    index = (index + 1) % pizzas.length;
+    pizzaImage.src = pizzas[index];
+    pizzaImage.style.opacity = 1;
+  }, 500);
 
 }, 3000);
