@@ -46,6 +46,14 @@ nav a:hover {
   font-weight: bold;
 }
 
+/* ACTIVE NAV LINK */
+nav a.active {
+  background: rgba(230, 57, 70, 0.15); /* transparent red */
+  color: #e63946;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
 /* HERO */
 .hero {
   display: flex;
