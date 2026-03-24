@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Reviews</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="page">
+<h1>⭐ Reviews</h1>
+
+<div id="reviews"></div>
+
+<input id="reviewInput" placeholder="Write review">
+<button onclick="addReview()">Submit</button>
+</section>
+
+<script>
+function addReview(){
+  let input = document.getElementById("reviewInput").value;
+  let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+  reviews.push(input);
+  localStorage.setItem("reviews", JSON.stringify(reviews));
+  loadReviews();
+}
+
+function loadReviews(){
+  let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+  let html = "";
+  reviews.forEach(r => html += `<p>⭐ ${r}</p>`);
+  document.getElementById("reviews").innerHTML = html;
+}
+loadReviews();
+</script>
+
+</body>
+</html>
