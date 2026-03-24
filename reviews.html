@@ -27,7 +27,7 @@ function addReview(){
 function loadReviews(){
   let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
   let html = "";
-  reviews.forEach(r => html += `<p>⭐ ${r}</p>`);
+  reviews.forEach(r => html += `<p> ${r}</p>`);
   document.getElementById("reviews").innerHTML = html;
 }
 loadReviews();
