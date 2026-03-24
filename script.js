@@ -1,43 +1,46 @@
+// Pizza images
 const pizzas = ["p1.png", "p2.png", "p3.png", "p4.png"];
 let index = 0;
 
+// Get elements
 const pizzaImage = document.getElementById("pizzaImage");
 const arc = document.querySelector(".wheel-arc");
 
-// Safety check (important if script loads before DOM)
+// Run only if elements exist
 if (pizzaImage && arc) {
 
-  setInterval(() => {
+  function changePizza() {
 
-    // Pause arc rotation
+    // Pause arc animation
     arc.style.animationPlayState = "paused";
 
-    // Rotate arc slightly (feedback effect)
+    // Small rotation effect
     arc.style.transform = "rotate(135deg)";
 
-    // Slide out current pizza
+    // Slide current pizza out
     pizzaImage.style.transform = "translateX(-100%) rotate(-20deg)";
 
     setTimeout(() => {
-      // Change pizza image
+      // Change image
       index = (index + 1) % pizzas.length;
       pizzaImage.src = pizzas[index];
 
-      // Bring new pizza from right
+      // Bring new pizza in
       pizzaImage.style.transform = "translateX(100%) rotate(20deg)";
     }, 400);
 
     setTimeout(() => {
-      // Reset position
+      // Reset position smoothly
       pizzaImage.style.transform = "translateX(0) rotate(0)";
-    }, 500);
+    }, 550);
 
     setTimeout(() => {
-      // Resume arc rotation
+      // Resume arc animation
       arc.style.animationPlayState = "running";
-      arc.style.transform = ""; // reset transform
+      arc.style.transform = "";
     }, 900);
+  }
 
-  }, 3000);
-
+  // Run every 3 seconds
+  setInterval(changePizza, 3000);
 }
